@@ -3,14 +3,13 @@
         <title>TopViagens</title>
     </head>
     <body>
-        <div>
-            <h1><u>Melhores viagens pelo MUNDO</u></h1>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><u>Rio de Janeiro!!</u></h2>
-            <p>Se tem uma cidade que fica difícil montar um roteiro de passeios, tamanha a variedade de locais incríveis para visitar, essa cidade é o Rio de Janeiro. Mas a gente dá uma forcinha, e lista a seguir 9 dos pontos turísticos do Rio de Janeiro que são imperdíveis. Confira!</p>
-        </div>
+         <h1><u>Melhores viagens pelo MUNDO</u></h1>
+		{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+		{% endfor %}
     </body>
 </html>
